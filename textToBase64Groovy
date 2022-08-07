@@ -1,0 +1,12 @@
+import com.sap.gateway.ip.core.customdev.util.Message;
+    import java.util.HashMap;
+    
+    def Message processData(Message message) {
+    print(message)
+    def body = message.getBody(java.lang.String)
+    def base64Enc = body.bytes.encodeBase64().toString()
+
+    message.setBody(base64Enc)
+    return message;
+        }
+    
